@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apuração Anual</title>
+</head>
+<body>
+    <script>
+        console.log("Hello World!");
+        // Janeiro
+        console.log("Janeiro")
+        salario1 = 3000
+        aluguel1 = 1000
+        conta_de_luz1 = 200
+        conta_de_agua1 = 100
+        internet1 = 100 
+        transporte1 = 300
+        lazer1 = 300
+        alimentação1 = 500
+        saldo1 = salario1 - aluguel1 - conta_de_luz1 - conta_de_agua1 - internet1 - transporte1 - lazer1 - alimentação1
+        console.log(saldo1)
+        // Boolean
+        esta_negativo1 = saldo1 < 0
+        if (esta_negativo1) {
+            console.log("juros de janeiro")
+            juros1 = saldo1*0.10
+            console.log(juros1)
+            saldo1 = saldo1 - juros1
+        } else {
+            console.log("rendimentos de janeiro")
+            rendimentos1 = saldo1*0.005
+            console.log(rendimentos1)
+            saldo1 = saldo1 + rendimentos1
+        }
+        console.log("total mês de janeiro")
+        console.log(saldo1)
+        // Fevereiro
+        console.log("Fevereiro")
+        salario2 = 3000
+        aluguel2 = 1200
+        conta_de_luz2 = 250
+        conta_de_agua2 = 100
+        internet2 = 100 
+        transporte2 = 500
+        lazer2 = 0
+        alimentação2 = 1000
+        saldo2 = salario2 - aluguel2 - conta_de_luz2 - conta_de_agua2 - internet2 - transporte2 - lazer2 - alimentação2
+        console.log(saldo2)
+        // Boolean
+        esta_negativo2 = saldo2 < 0
+        if (esta_negativo2) {
+            console.log("juros de fevereiro")
+            juros2 = saldo2*0.10
+            console.log(juros2)
+            saldo2 = saldo2 + juros2
+        } else {
+            console.log("rendimentos de fevereiro")
+            rendimentos2 = saldo2*0.005
+            console.log(rendimentos2)
+            saldo2 = saldo2 + rendimentos2
+        }
+        console.log("total mês de fevereiro")
+        console.log(saldo2)
+
+        console.log("Ano")
+        console.log(saldo1+saldo2)
+
+
+
+    </script>
+</body>
+</html>
