@@ -8,8 +8,32 @@
 </head>
 <body>
     <script>
+        function arredondar (valor) {
+            return Math.round(valor*100)/100
+        }
+        function calcularJuros (valor) {
+            juros = arredondar(valor * 0.10)
+            return juros
+        }
+        function calcularRendimentos (valor) {
+            rendimentos = arredondar(valor * 0.005)
+            return rendimentos 
+        }
+        function calcularSaldo (mes, saldoInicial, salario, aluguel, conta_de_luz, conta_de_agua, internet, transporte, lazer, alimentação) {
+            console.log(mes)
+            saldo = saldoInicial + salario - aluguel - conta_de_luz - conta_de_agua - internet - transporte - lazer - alimentação
+            esta_negativo = saldo < 0
+            if (esta_negativo) {
+            juros = calcularJuros (saldo)
+            saldo = arredondar(saldo + juros)
+            } else {
+            rendimentos = calcularRendimentos (saldo)
+            saldo = arredondar(saldo + rendimentos)
+            }
+            return saldo
+        }
+        saldoInicial = 0
         // Janeiro
-        console.log("Janeiro")
         salario1 = 3000
         aluguel1 = 1000
         conta_de_luz1 = 200
@@ -18,25 +42,9 @@
         transporte1 = 300
         lazer1 = 300
         alimentação1 = 500
-        saldo1 = salario1 - aluguel1 - conta_de_luz1 - conta_de_agua1 - internet1 - transporte1 - lazer1 - alimentação1
-        console.log(saldo1)
-        // Boolean
-        esta_negativo1 = saldo1 < 0
-        if (esta_negativo1) {
-            console.log("juros de janeiro")
-            juros1 = saldo1*0.10
-            console.log(juros1)
-            saldo1 = saldo1 - juros1
-        } else {
-            console.log("rendimentos de janeiro")
-            rendimentos1 = saldo1*0.005
-            console.log(rendimentos1)
-            saldo1 = saldo1 + rendimentos1
-        }
-        console.log("total mês de janeiro")
+        saldo1 = calcularSaldo ("janeiro", saldoInicial, salario1, aluguel1, conta_de_luz1, conta_de_agua1, internet1, transporte1, lazer1, alimentação1)
         console.log(saldo1)
         // Fevereiro
-        console.log("Fevereiro")
         salario2 = 3000
         aluguel2 = 1200
         conta_de_luz2 = 250
@@ -45,29 +53,22 @@
         transporte2 = 500
         lazer2 = 0
         alimentação2 = 1000
-        saldo2 = salario2 - aluguel2 - conta_de_luz2 - conta_de_agua2 - internet2 - transporte2 - lazer2 - alimentação2
+        saldo2 = calcularSaldo ("fevereiro", saldo1, salario2, aluguel2, conta_de_luz2, conta_de_agua2, internet2, transporte2, lazer2, alimentação2)
         console.log(saldo2)
-        // Boolean
-        esta_negativo2 = saldo2 < 0
-        if (esta_negativo2) {
-            console.log("juros de fevereiro")
-            juros2 = saldo2*0.10
-            console.log(juros2)
-            saldo2 = saldo2 + juros2
-        } else {
-            console.log("rendimentos de fevereiro")
-            rendimentos2 = saldo2*0.005
-            console.log(rendimentos2)
-            saldo2 = saldo2 + rendimentos2
-        }
-        console.log("total mês de fevereiro")
-        console.log(saldo2)
-
+        // Março
+        salario3 = 4000
+        aluguel3 = 1200
+        conta_de_luz3 = 200
+        conta_de_agua3 = 100
+        internet3 = 200 
+        transporte3 = 500
+        lazer3 = 800
+        alimentação3 = 1000
+        saldo3 = calcularSaldo ("março", saldo2, salario3, aluguel3, conta_de_luz3, conta_de_agua3, internet3, transporte3, lazer3, alimentação3)
+        console.log(saldo3)
+        acumuladoAno = saldo3      
         console.log("Ano")
-        console.log(saldo1+saldo2)
-
-
-
+        console.log(acumuladoAno)
     </script>
 </body>
 </html>
